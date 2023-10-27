@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('loginback.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 5px;
+            padding: 10px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            background-color: #0074D9;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Help Us</h2>
+        <p>If you would like to contribute, provide feedback, or have any other inquiries, please use the form below:</p>
+        
+        <form id="helpForm" action="process_form.php" method="post">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name">
+            
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email">
+            
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" ></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+        
+    </div>
+</body>
+</html>

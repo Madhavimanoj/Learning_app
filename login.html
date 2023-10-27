@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('loginback.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 120px;
+            padding: 10;
+        }
+        label{
+            display:block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input{
+            width:100%;
+            padding:5px
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        button{
+            width: 100%;
+            background: #007BFF;
+            border: 0;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="return validateForm()" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+            <span class="error" id="userNameError"></span>
+            <br><br>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            <span class="error" id="passwordError"></span>
+            <br><br>
+
+            <button type="submit">Login</button>
+        </form>
+        <br><br>
+        <p>Don't have an account <a href="registration.html">Click here</a></p>
+    </div>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+            const userName = document.getElementById("username").value; // corrected ID
+            const password = document.getElementById("password").value; // corrected ID
+
+            const userNameError = document.getElementById("userNameError");
+            const passwordError = document.getElementById("passwordError");
+
+            userNameError.textContent = "";
+            passwordError.textContent = "";
+
+            if (userName.trim() === "") {
+                userNameError.textContent = "Username is required";
+                isValid = false;
+            }
+
+            if (password.length < 6) {
+                passwordError.textContent = "Password must be at least 6 characters long";
+                isValid = false;
+            }
+
+            if(isValid){
+                alert("Form submitted successfully!!!");
+                window.location.href="landing.html";
+                
+            }
+
+           return false;
+        }
+    </script>
+</body>
+</html>
